@@ -3,7 +3,7 @@ Introduction
 
 YiiSolr is a very simple wrapper to the [PHP Apache Solr Extension](http://php.net/manual/en/book.solr.php) that allows you to communicate effectively with the Apache Solr server in PHP 5 in your Yii Applications. 
 
-This extension has also been written to conform to the interface defined by another Yii Solr extension, [Solr](http://www.yiiframework.com/extension/solr) that uses the [solr-php-client](http://code.google.com/p/solr-php-client/) library to connect with Solr. So, this extension gives you another choice in client libraries with which to connect to Solr. 
+This extension has also been written to conform to the interface defined by another Yii Solr extension, [Solr](http://www.yiiframework.com/extension/solr), which uses the [solr-php-client](http://code.google.com/p/solr-php-client/) library to connect with Solr. So, this extension gives you another choice in client libraries with which to connect to Solr. And you can write the same code against either extension so changing your Solr connection implementation should is easy.
 
 
 Initial Installation
@@ -48,7 +48,7 @@ Example Usage:
 	//To search for these added documents
 	$result = Yii::app()->solrManager->get('title:Test', 0, 20);
 	//get the number of returned results
-	echo "Results number is ".$result->response->numFound;
+	echo "Number of results returned: ".$result->response->numFound;
 	//iterate over the returned docs array to get information from each document
 	foreach($result->response->docs as $doc)
 	{
